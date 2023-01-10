@@ -41,17 +41,6 @@ export default function Home({ articleList }: IProps) {
           ))}
         </section>
       )}
-      {/* <section className={cx("section_betatest")}>
-        <div className={cx("header")}>
-          <div className={cx("title")}>Wonder 베타테스터 신청</div>
-          <div className={cx("viewmore")}>
-            <Link href={`/article`}>더보기</Link>
-          </div>
-        </div>
-        <div className={cx("service")}>
-          <Image layout={"raw"} fill={true} alt={"lp"} src={lpImage} />
-        </div>
-      </section> */}
     </div>
   );
 }
