@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  > section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+
+      .title {
+        font-size: typho("h5");
+        font-family: medium;
+      }
+      .viewmore {
+        font-size: typho("p");
+        color: $color_primary;
+      }
+    }
+  }
+
+  .section_title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $color_grey3;
+
+    .title {
+      font-family: bold;
+      font-size: typho("h4");
+    }
+    .desc {
+      font-size: typho("p");
+    }
+    .thumbnail_image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 150px;
+      img {
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .section_betatest {
+    .service {
+      position: relative;
+    }
+  }
+}

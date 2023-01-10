@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 1rem;
+  border: 1px solid $color_grey3;
+  font-family: medium;
+  color: $color_grey2;
+}
+
+.container:hover {
+  @include shadow;
+}

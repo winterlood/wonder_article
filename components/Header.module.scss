@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo_col {
+    cursor: pointer;
+    font-family: bold;
+  }
+
+  > nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+
+    > li {
+      display: flex;
+      align-items: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-radius: 60px;
+      font-weight: bold;
+      color: $color_grey2;
+      @include typho_nav_menu;
+    }
+    > .nav_on {
+      //   background-color: rgb(245, 245, 245);
+      background-color: $color_primary_tinted;
+      color: $color_primary;
+    }
+  }
+}
