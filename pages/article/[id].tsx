@@ -12,6 +12,7 @@ import logo from "public/image/logo_square.png";
 import style from "./[id].module.scss";
 import classNames from "classnames/bind";
 import Head from "next/head";
+import MetaHead from "components/MetaHead";
 const cx = classNames.bind(style);
 
 interface IProps {
@@ -34,25 +35,11 @@ export default function Page(props: IProps) {
 
   return (
     <div className={cx("container")}>
-      <Head>
-        <title>{articleInfo.title}</title>
-        <meta property="og:title" content={articleInfo.title} />
-        <meta property="og:image" content={articleInfo.cover} />
-        <meta
-          property="og:description"
-          content={`Wonder가 소개하는 '뭐라도 하는' 아티클들 ${articleInfo.title}`}
-        />
-        <meta property="og:type" content={"website"} />
-        <meta property="og:locale" content={"kor"} />
-        <meta property="og:site_name" content={"Wonder"} />
-        <meta property="twitter:title" content={articleInfo.title} />
-        <meta property="twitter:image" content={articleInfo.cover} />
-        <meta property="twitter:card" content={"image"} />
-        <meta
-          property="twitter:description"
-          content={`Wonder가 소개하는 '뭐라도 하는' 아티클들 ${articleInfo.title}`}
-        />
-      </Head>
+      <MetaHead
+        title={articleInfo.title}
+        description={`Wonder가 소개하는 '뭐라도 하는' 아티클들 ${articleInfo.title}`}
+        thumbnail={articleInfo.cover}
+      />
       <div className={cx("header")}>
         <div className={cx("info_row")}>
           <div className={cx("create_time")}>
