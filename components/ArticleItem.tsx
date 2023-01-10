@@ -13,7 +13,7 @@ export default function ArticleItem(props: IProps) {
   const cover = props.cover ?? logo.src;
   return (
     <div className={cx("container")}>
-      <Link href={`/article/${props.id}`}>
+      <Link href={`/article/${props.id}`} prefetch={false}>
         <div
           className={cx("thumbnail_col")}
           style={{ backgroundImage: `url(${cover})` }}
