@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import ArticleItem from "components/ArticleItem";
 import { getArticleList } from "lib/server/notion";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import { IArticle } from "types/global";
 import style from "./index.module.scss";
 const cx = classNames.bind(style);
@@ -20,11 +20,12 @@ export default function Page({ articleList }: IProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
   const articleList = await getArticleList();
   return {
     props: {
       articleList,
     },
+    revalidate: 5,
   };
 };

@@ -1,13 +1,11 @@
 import classNames from "classnames/bind";
 import style from "./index.module.scss";
 import { getArticleList } from "lib/server/notion";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { IArticle } from "types/global";
 import ArticleItem from "components/ArticleItem";
-import lpImage from "public/image/lp_screen.png";
 import Link from "next/link";
-import Image from "next/image";
 
 const cx = classNames.bind(style);
 
@@ -45,11 +43,12 @@ export default function Home({ articleList }: IProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
   const articleList = await getArticleList();
   return {
     props: {
       articleList: articleList ? articleList.slice(0, 2) : [],
     },
+    revalidate: 5,
   };
 };
